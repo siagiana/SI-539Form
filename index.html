@@ -4,17 +4,123 @@
   	<link type="text/css" rel="stylesheet" href="form.css">
   	<script>
 	function check(input) {
-	  if (input.value != document.getElementById('email_addr').value) {
+	  if (input.value != document.getElementById('email_address').value) {
 	  	input.setCustomValidity('The two email addresses must match.');
  		 } else {
  	   // input is valid -- reset the error message
  	   input.setCustomValidity('');
- 		 }
+ 	}
 }
 </script>
   </head>
 
   <body>
-  	<p>This is a test </p>
+  	<div id = "content">
+
+<form method="GET"
+      action="http://www.cnn.com">
+<h1> Wines Science Olympiad Coach Registration </h1>
+<p>
+Thank you for being part of the Science Olympiad!  Please fill out
+the following form to expediate coordination between all of the 
+coaches.  Please note, to allow the fastest possible scheduling most of these fields MUST be filled in in order to submit the form.  If you have any questions/concerns, please do not hesitate to contact David Creen.	
+ </p>
+ 
+<h2>General Info </h2>
+  <label>First name:
+  <input type="text" id="first_name" name="first_name" placeholder="Jason" required></label>
+  
+  <label>Last name:
+  <input type="text" id="last_name" name="last_name" placeholder="Smith" required></label>
+  
+  <label>Email address:</label>
+  <input type="email" id="email_address" name="email_address" required>
+
+  <label>Confirm email address:</label>
+  <input type="email" id="email_confirm" name="email_confirm" required oninput="check(this)">
+
+  <label>Password</label>
+  <input type="password" id="email_address" name="email_address" required>
+
+
+  <label>Confirm password</label>
+  <input type="password" id="password" name="password" required required oninput="check(this)">
+
+  <label>Nickname:
+  <input type="text" id="Nickname" name="Nickname" placeholder="Jay" required></label>
+
+
+
+
+
+
+  <label>Event to coach:
+  <select name = "event">
+    <option value = "AeroDynamics"> AeroDynamics (2nd and 3rd grades) </option>
+    <option value = "Barge"> Barge Building (2nd grade) </option>
+    <option value = "Circuit">Circuit Wizardry  (4th and 5th grades) </option>
+    <option value = "Disease">Disease Detective  (all grades) </option>
+    <option value = "Estimania">Estimania  (all grades) </option>
+    <option value = "Feathered Friends">Feathered Friends  (all grades) </option>
+
+    <option value = "Bloom">In Bloom  (2nd and 3rd grades)</option>
+    <option value = "Infinity">To Infinity and Beyond (all grades)  </option>
+    <option value = "Maps">Map Reading  (all grades) </option>
+    <option value = "Architecture">Mystery Architecture (all grades) </option>
+    <option value = "On Target">On Target (all grades)  </option>
+    <option value = "Pasta Bridges">Pasta Bridges  (2nd grade) </option>
+    <option value = "Pentathlon">Pentathlon  (all grades) </option>
+    <option value = "Chemistry">Chemistry/Potions (4th and 5th grades)</option>
+    <option value = "Puff Mobiles">Puff Mobiles (2nd and 3rd grades)  </option>
+    <option value = "Reflections">Reflections (4th and 5th grades) </option>
+    <option value = "SJ5">Science Jeopardy (3rd, 4th, and 5th grades) </option>
+    <option value = "Straw Tower">Straw Tower (3rd, 4th, and 5th grades) </option>
+    <option value = "Rockets">Water Rockets  (3rd, 4th, and 5th grades) </option>
+    <option value = "WhatWentBy">What Went By?  (3rd, 4th, and 5th grades) </option>
+    <option value = "Write It Build It">Write It, Build It (3rd, 4th, and 5th grades)   </option>
+    <option value = "Picture This">Pilot Event: Picture This  (4th and 5th grades)</option>
+    </select> </label>
+
+ <label>Second Event to coach:
+  <select name = "event2">
+    <option value = "AeroDynamics"> AeroDynamics (2nd and 3rd grades) </option>
+    <option value = "Barge"> Barge Building (2nd grade) </option>
+    <option value = "Circuit">Circuit Wizardry  (4th and 5th grades) </option>
+    <option value = "Disease">Disease Detective  (all grades) </option>
+    <option value = "Estimania">Estimania  (all grades) </option>
+    <option value = "Feathered Friends">Feathered Friends  (all grades) </option>
+
+    <option value = "Bloom">In Bloom  (2nd and 3rd grades)</option>
+    <option value = "Infinity">To Infinity and Beyond (all grades)  </option>
+    <option value = "Maps">Map Reading  (all grades) </option>
+    <option value = "Architecture">Mystery Architecture (all grades) </option>
+    <option value = "On Target">On Target (all grades)  </option>
+    <option value = "Pasta Bridges">Pasta Bridges  (2nd grade) </option>
+    <option value = "Pentathlon">Pentathlon  (all grades) </option>
+    <option value = "Chemistry">Chemistry/Potions (4th and 5th grades)</option>
+    <option value = "Puff Mobiles">Puff Mobiles (2nd and 3rd grades)  </option>
+    <option value = "Reflections">Reflections (4th and 5th grades) </option>
+    <option value = "SJ5">Science Jeopardy (3rd, 4th, and 5th grades) </option>
+    <option value = "Straw Tower">Straw Tower (3rd, 4th, and 5th grades) </option>
+    <option value = "Rockets">Water Rockets  (3rd, 4th, and 5th grades) </option>
+    <option value = "WhatWentBy">What Went By?  (3rd, 4th, and 5th grades) </option>
+    <option value = "Write It Build It">Write It, Build It (3rd, 4th, and 5th grades)   </option>
+    <option value = "Picture This">Pilot Event: Picture This  (4th and 5th grades)</option>
+    </select> </label>
+
+    
+  
+
+
+  <label>Cell phone number for day of event emergencies:</label>
+  <input type="tel" id="cell" name = "cell"
+  placeholder="(734)555-0000" name="cell" required>
+ 
+ <p>
+  <input type="submit" value="Submit Form" /> 
+</p>
+</form>
+</div>
+
   </body>
 </html>
