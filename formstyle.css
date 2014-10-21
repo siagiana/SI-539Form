@@ -1,19 +1,30 @@
-.formtitle {
+body {
+  background-color: #f94d3d;
+}
+h1 {
   text-align: center;
   font-weight: bolder;
   font-style: italic;
+  font-size: 4em;
+}
+h2  {
+  font-size: 2em;
+  font-weight: bold;
+}
+h3  {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 #content{
-  background-color: #f94d3d;
-  margin:20px;
-  padding:20px;
+  padding:40px;
   border:1px;
   color:#fff;
   display:block;
   font-family: Helvetica, Helvetica, Arial;
+  font-size: 1em;
 }
 form{
-  border: 1px solid black;
+  border: 2px solid black;
   padding-left: 20px;
 }
 input,select{
