@@ -1,5 +1,7 @@
 .formtitle {
   text-align: center;
+  font-weight: bolder;
+  font-style: italic;
 }
 #content{
   background-color: #f94d3d;
@@ -7,6 +9,8 @@
   padding:20px;
   border:1px;
   color:#fff;
+  display:block;
+  font-family: Helvetica, Helvetica, Arial;
 }
 form{
   border: 1px solid black;
