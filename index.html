@@ -24,12 +24,22 @@
 		}
 	</script>
 
+
+	
+	<script type="text/javascript"> //JS for date selection
+	//populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
+		window.onload=function(){
+			populatedropdown("daydropdown", "monthdropdown", "yeardropdown");
+		}
+
+	</script>
+	
 	<script type="text/javascript" src = "js/clock.js"></script>
 	<script type="text/javascript" src = "js/date.js"></script>
 
 </head>
 
-<body>
+<body onload="startTime()">
 
 <div id = "content" class = "container">
   		
@@ -38,12 +48,12 @@
 	<h3>General information:</h3>
 	
 	<form method="post" action="http://www.cnn.com">
-		<div class="col-xs-12">
-			<div class="rebel">
+		<div class="col-xs-12 name">
+			<div class="rebel first_name">
 				<label>First name</label>
 				<input type="text" id="first_name" name="first_name" placeholder="Jason" required oninput="validateFirstName(this)">
 			</div>
-			<div class="rebel">
+			<div class="rebel last_name">
 				<label>Last name</label>
 				<input type="text" id="last_name" name="last_name" placeholder="Smith" required oninput="validateLastName(this)">
 			</div>
@@ -51,12 +61,12 @@
 			<br>
 		</div>
 		
-		<div class="col-xs-12">
-			<div class="rebel">	
+		<div class="col-xs-12 email">
+			<div class="rebel email_address">	
 				<label>Email address</label>
 					<input type="email" id="email_address" name="email_address" placeholder="jasonsmith@gmail.com" required oninput ="validateEmail(this)">
 			</div>
-			<div class="rebel">
+			<div class="rebel confirm_email">
 				<label>Confirm email address</label>
 					<input type="email" id="email_confirm" name="email_confirm" required oninput="validateSameEmail(this)">
 			</div>
@@ -65,19 +75,19 @@
 		</div>
 		
 		<div class="col-xs-12">
-			<div class="rebel">
+			<div class="rebel password">
 			<label>Password</label>
 				<input type="password" id="password_requirement" name="password_requirement" required oninput="validatePasswordRequirement(this)">
 			<br>
 			</div>
-			<div class="rebel">
+			<div class="rebel confirm_password">
 			<label>Confirm password</label>
 				<input type="password" id="password" name="password" required oninput="validatePassword(this)">
 			<br>
 			</div>
 		</div>
 		
-		<div class="col-xs-12">
+		<div class="col-xs-12 nickname">
 			<label>Nickname</label>
 				<input type="text" id="Nickname" name="nickname" placeholder="Jay" required oninput="validateNickname"></label>
 			<br>
@@ -90,14 +100,9 @@
 			<select id="yeardropdown"></select>
 			<br>
 		</div>
-		<script type="text/javascript">
-			//populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
-			window.onload=function(){
-			populatedropdown("daydropdown", "monthdropdown", "yeardropdown")
-			}
-		</script>
 
-		<div class="col-xs-12">		
+
+		<div class="col-xs-12 gender">
 			<label>Gender<br>
 				<input class="rebel" type="radio" name="sex" value="male">Male
 				<input class="rebel" type="radio" name="sex" value="female">Female
@@ -106,13 +111,13 @@
 		<br>
 		</div>
 		
-		<div class="col-xs-12">
+		<div class="col-xs-12 city">
 			<label>City</label>
 				<input type="text" id="zipcode" name="zipcode" placeholder="Ann Arbor" required>
 		<br>
 		</div>
 		
-		<div class="col-xs-12">
+		<div class="col-xs-12 state">
 			<label>State
 				<select>
 					<option value="AL">Alabama</option>
@@ -170,7 +175,7 @@
 			<br>
 		</div>
 		
-		<div class="col-xs-12">
+		<div class="col-xs-12 zipcode">
 			<label>Zip code</label>
 				<input type="text" id="zipcode" name="zipcode" placeholder="48104" required oninput="validateZip(this)">
 			<br>
@@ -186,7 +191,7 @@
 			<div class="col-xs-12">
 				<span>© Kuzines 2014</span>
 				<span>|</span>
-				<span document.getElementById("clockbox")></span>
+				<span id="txt"></span>
 			</div>
 		</footer>
 	</div>
