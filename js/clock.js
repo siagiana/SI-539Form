@@ -20,3 +20,4 @@ function GetClock(){
         GetClock();
         setInterval(GetClock,1000);
     }
+}

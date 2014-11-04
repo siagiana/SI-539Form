@@ -1,62 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Kuzines Edit Profile</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--Bootstrap-->
-  	 	<link href="css/bootstrap.min.css" rel="stylesheet">
-  	 	<script src="js/jquery.min.js"></script>
-   		<script src="js/bootstrap.min.js"></script>  
-  		<link type="text/css" rel="stylesheet" href="formstyle.css">
-  		<script type="text/javascript" src = "form.js"></script>
-	  	<script>
-			function validate(form) {
+<head>
+	<title>Kuzines Edit Profile</title>
+	<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+	<!--Bootstrap-->
+  	<link href="css/bootstrap.min.css" rel="stylesheet">
+  	<script src="js/jquery.min.js"></script>
+   	<script src="js/bootstrap.min.js"></script>  
+  	<link type="text/css" rel="stylesheet" href="formstyle.css">
+  	<script type="text/javascript" src = "form.js"></script>
+	<script>
+		function validate(form) {
 			fail  = validateFirstName(form.first_name.value)
 			fail += validateLastName(form.last_name.value)
 			fail += validateEmail(form.email_address.value)
 			fail += validateSameEmail(form.email_confirm.value)
 			fail += validatePasswordRequirement(form.password_requirement.value)
 			fail += validatePassword(form.password.value)
-			fail += validateNickName(form.Nickname.value)
+			fail += validateNickname(form.nickname.value)
 			fail += validateZip(form.zipcode.value)
-			if (fail == "") return true
+			if (fail == "") { return true }
 			else { alert(fail); return false }
-		</script>
-
-		<script type="text/javascript" src = "js/clock.js"></script>
-
-		<script type="text/javascript">
-		var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
-
-		function populatedropdown(dayfield, monthfield, yearfield){
-			var today=new Date()
-			var dayfield=document.getElementById(dayfield)
-			var monthfield=document.getElementById(monthfield)
-			var yearfield=document.getElementById(yearfield)
-			for (var i=0; i<31; i++)
-			dayfield.options[i]=new Option(i, i+1)
-			dayfield.options[today.getDate()]=new Option(today.getDate(), today.getDate(), true, true) //select today's day
-			for (var m=0; m<12; m++)
-				monthfield.options[m]=new Option(monthtext[m], monthtext[m])
-				monthfield.options[today.getMonth()]=new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month
-				var thisyear=today.getFullYear()
-				for (var y=0; y<20; y++){
-				yearfield.options[y]=new Option(thisyear, thisyear)
-				thisyear+=1
 		}
-		yearfield.options[0]=new Option(today.getFullYear(), today.getFullYear(), true, true)//select today's year
-	}	
+	</script>
 
-</script>
-	</head>
-  	<body>
+	<script type="text/javascript" src = "js/clock.js"></script>
+	<script type="text/javascript" src = "js/date.js"></script>
 
-  	<div id = "content">
-			<form method="GET" action="http://www.cnn.com">
-			<h1>KUZINES!</h1>
-			<h2>Edit your profile!</h2>
-			<h3>General information:</h3>
+</head>
+
+<body>
+
+<div id = "content" class = "container">
+  		
+  	<h1>KUZINES!</h1>
+	<h2>Edit your profile!</h2>
+	<h3>General information:</h3>
+	
+	<form method="post" action="http://www.cnn.com">
 		<div class="col-xs-12">
 			<div class="rebel">
 				<label>First name</label>
@@ -69,6 +50,7 @@
 			<br>
 			<br>
 		</div>
+		
 		<div class="col-xs-12">
 			<div class="rebel">	
 				<label>Email address</label>
@@ -81,7 +63,7 @@
 			<br>
 			<br>
 		</div>
-			<br>
+		
 		<div class="col-xs-12">
 			<div class="rebel">
 			<label>Password</label>
@@ -94,34 +76,43 @@
 			<br>
 			</div>
 		</div>
+		
 		<div class="col-xs-12">
-			<label>Nickname
-				<input type="text" id="Nickname" name="Nickname" placeholder="Jay" required oninput="validateNickname"></label>
+			<label>Nickname</label>
+				<input type="text" id="Nickname" name="nickname" placeholder="Jay" required oninput="validateNickname"></label>
 			<br>
-			<label>Date of Birth
-				<br>
-			<form action="" name="someform">
+		</div>
+		
+		<div class="col-xs-12 date">
+			<label>Date of Birth</label>
 			<select id="daydropdown"></select> 
 			<select id="monthdropdown"></select> 
-			<select id="yeardropdown"></select> 
-			</form>
-		</div>
-<script type="text/javascript">
-
-//populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
-window.onload=function(){
-populatedropdown("daydropdown", "monthdropdown", "yeardropdown")
-}
-</script>
-			</label>
+			<select id="yeardropdown"></select>
 			<br>
-			<label>Gender:
+		</div>
+		<script type="text/javascript">
+			//populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
+			window.onload=function(){
+			populatedropdown("daydropdown", "monthdropdown", "yeardropdown")
+			}
+		</script>
+
+		<div class="col-xs-12">		
+			<label>Gender<br>
 				<input class="rebel" type="radio" name="sex" value="male">Male
 				<input class="rebel" type="radio" name="sex" value="female">Female
 			</label>
-			<br>
+		<br>
+		<br>
+		</div>
+		
+		<div class="col-xs-12">
 			<label>City</label>
 				<input type="text" id="zipcode" name="zipcode" placeholder="Ann Arbor" required>
+		<br>
+		</div>
+		
+		<div class="col-xs-12">
 			<label>State
 				<select>
 					<option value="AL">Alabama</option>
@@ -176,23 +167,30 @@ populatedropdown("daydropdown", "monthdropdown", "yeardropdown")
 					<option value="WI">Wisconsin</option>
 					<option value="WY">Wyoming</option>
 				</select>
+			<br>
+		</div>
+		
+		<div class="col-xs-12">
 			<label>Zip code</label>
 				<input type="text" id="zipcode" name="zipcode" placeholder="48104" required oninput="validateZip(this)">
 			<br>
-			</label>
 			<br>
 		</div>
-			<p>
-  				<input class="button" type="submit" value="Submit Form" />
-			</p>
-		</form>
+	
+		<p><input class="button" type="submit" value="Submit Form"/></p>
+	</form>
+</div>
+
+	<div class ="container">
+		<footer>
+			<div class="col-xs-12">
+				<span>© Kuzines 2014</span>
+				<span>|</span>
+				<span document.getElementById("clockbox")></span>
+			</div>
+		</footer>
 	</div>
-	<footer>
-		<div class="col-xs-12">
-			<span>© Kuzines 2014</span>
-			<span>|</span>
-			<span id="clockbox"></span>
-		</div>
-	</footer>
-  	</body>
+
+</body>
+
 </html>
