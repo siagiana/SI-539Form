@@ -48,6 +48,12 @@
     		GetClock();
     		setInterval(GetClock,1000);
     		}
+
+    		function showText()
+			{
+				var popup_message = "Welcome to Kuzines, " + document.getElementById("first_name").value + "!";
+				alert(popup_message);
+			}
     	</script>
 	</head>
   	<body>
@@ -336,7 +342,7 @@
 			<br>
 		</div>
 			<p>
-  				<input class="button" type="submit" value="Submit Form" />
+  				<input class="button" type="submit" value="Submit Form" onclick="showText()"/>
 			</p>
 		</form>
 	</div>
