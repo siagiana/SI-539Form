@@ -66,3 +66,9 @@ function validateZip(field) {
 	return ""
 	}
 }
+
+function showText()
+{
+		var popup_message = "Welcome to Kuzines, " + document.getElementById("first_name").value + "!";
+		alert(popup_message);
+}
