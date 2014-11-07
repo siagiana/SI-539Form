@@ -10,19 +10,7 @@
    		<script src="js/bootstrap.min.js"></script>  
   		<link type="text/css" rel="stylesheet" href="formstyle.css">
   		<script type="text/javascript" src = "form.js"></script>
-	  	<script>
-			function validate(form) {
-			fail  = validateFirstName(form.first_name.value)
-			fail += validateLastName(form.last_name.value)
-			fail += validateEmail(form.email_address.value)
-			fail += validateSameEmail(form.email_confirm.value)
-			fail += validatePasswordRequirement(form.password_requirement.value)
-			fail += validatePassword(form.password.value)
-			fail += validateNickName(form.Nickname.value)
-			fail += validateZip(form.zipcode.value)
-			if (fail == "") return true
-			else { alert(fail); return false }
-		</script>
+
 
 		<script type="text/javascript">
     		tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
@@ -49,11 +37,11 @@
     		setInterval(GetClock,1000);
     		}
 
-    		function showText()
-			{
-				var popup_message = "Welcome to Kuzines, " + document.getElementById("first_name").value + "!";
-				alert(popup_message);
-			}
+   //  		function showText()
+			// {
+			// 	var popup_message = "Welcome to Kuzines, " + document.getElementById("first_name").value + "!";
+			// 	alert(popup_message);
+			// }
     	</script>
 	</head>
   	<body>

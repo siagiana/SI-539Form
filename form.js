@@ -1,3 +1,15 @@
+function validate(form) {
+	fail  = validateFirstName(form.first_name.value)
+	fail += validateLastName(form.last_name.value)
+	fail += validateEmail(form.email_address.value)
+	fail += validateSameEmail(form.email_confirm.value)
+	fail += validatePasswordRequirement(form.password_requirement.value)
+	fail += validatePassword(form.password.value)
+	fail += validateNickName(form.Nickname.value)
+	fail += validateZip(form.zipcode.value)
+	if (fail == "") return true
+	else { alert(fail); return false }
+
 function validateFirstName(field) {
 	if (field == "") return "No First Name was entered.\n"
 	return ""
@@ -20,7 +32,7 @@ function validateEmail(field) {
 function validateSameEmail(field) {
 	if (field.value != document.getElementById('email_address').value) {
 		field.setCustomValidity('The two email addresses must match.');
-		} 
+	} 
 	else {
 		 // input is valid -- reset the error message
 		 input.setCustomValidity('');
