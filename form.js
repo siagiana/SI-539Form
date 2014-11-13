@@ -6,7 +6,7 @@ function showText()
 
 
 function validate(form) {
-	// alert("checking");
+	alert("checking");
 	fail  = validateFirstName(form.first_name.value)
 	fail += validateLastName(form.last_name.value)
 	fail += validateEmail(form.email_address.value)
@@ -20,7 +20,10 @@ function validate(form) {
 		showText();
 		return true;
 	}
-	else { alert(fail); return false }
+	else { 
+		alert(fail); 
+		return false; 
+	}
 }
 
 function validateFirstName(field) {
@@ -49,16 +52,15 @@ function validateEmail(field) {
 }
 
 function validateSameEmail(field) {
-	// alert(field.value);
-	// alert(document.getElementById('email_address').value);
-	if (field.value != document.getElementById('email_address').value) {
-		field.setCustomValidity("The two email addresses must match.");
-	} 
-	else {
-		 // input is valid -- reset the error message
-		 // input.setCustomValidity('');
-		 return ""
+	var email1 = document.getElementById('email_address')
+	var email2 = document.getElementById('email_confirm')
+	if(email1.value == email2.value){
+		return ""
 	}
+	else{
+		field.setCustomValidity('The two e-mails must match.');
+	}
+
 }
 
 function validatePasswordRequirement(field){
