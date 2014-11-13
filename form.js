@@ -1,3 +1,10 @@
+function showText()
+{
+		var popup_message = "Welcome to Kuzines, " + document.getElementById("first_name").value + "!";
+		alert(popup_message);
+}
+
+
 function validate(form) {
 	fail  = validateFirstName(form.first_name.value)
 	fail += validateLastName(form.last_name.value)
@@ -7,7 +14,10 @@ function validate(form) {
 	fail += validatePassword(form.password.value)
 	fail += validateNickName(form.Nickname.value)
 	fail += validateZip(form.zipcode.value)
-	if (fail == "") return true
+	if (fail == "") {
+		showText();
+		return true;
+	}
 	else { alert(fail); return false }
 
 function validateFirstName(field) {
@@ -30,8 +40,8 @@ function validateEmail(field) {
 }
 
 function validateSameEmail(field) {
-	if (field.value != document.getElementById('email_address').value) {
-		field.setCustomValidity('The two email addresses must match.');
+	if (field.value !== document.getElementById('email_address').value) {
+		field.setCustomValidity("The two email addresses must match.");
 	} 
 	else {
 		 // input is valid -- reset the error message
@@ -52,8 +62,8 @@ return ""
 
 
 function validatePassword(field) {
-	if (field.value != document.getElementById('password').value) {
-		field.setCustomValidity('The two passwords must match.');
+	if (field.value !== document.getElementById('password').value) {
+		field.setCustomValidity("The two passwords must match.");
 		} else {
 		 	// input is valid -- reset the error message
 		 	field.setCustomValidity('');
@@ -79,8 +89,3 @@ function validateZip(field) {
 	}
 }
 
-function showText()
-{
-		var popup_message = "Welcome to Kuzines, " + document.getElementById("first_name").value + "!";
-		alert(popup_message);
-}
