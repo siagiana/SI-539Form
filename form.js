@@ -107,6 +107,7 @@ function validateZip(field) {
 		return "Zipcode must be 5 characters.\n"
 	else if (/[^0-9_-]/.test(field))
 		return "Only 0-9 allowed in Zipcode.\n"
-	return ""
-	}
+	else
+		return ""
+}
 
