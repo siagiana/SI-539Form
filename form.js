@@ -1,3 +1,5 @@
+
+
 function showText()
 {
 		var popup_message = "Welcome to Kuzines, " + document.getElementById("first_name").value + "!";
@@ -6,16 +8,16 @@ function showText()
 
 
 function validate(form) {
-	alert("checking");
+	// alert("checking");
 	fail  = validateFirstName(form.first_name.value)
 	fail += validateLastName(form.last_name.value)
 	fail += validateEmail(form.email_address.value)
 	fail += validateSameEmail(form.email_confirm.value)
 	fail += validatePasswordRequirement(form.password_requirement.value)
 	fail += validatePassword(form.password.value)
-	fail += validateNickName(form.Nickname.value)
+	fail += validateNickname(form.Nickname.value)
 	fail += validateZip(form.zipcode.value)
-	alert(fail);
+	// alert(fail);
 	if (fail == "") {
 		showText();
 		return true;
@@ -52,15 +54,14 @@ function validateEmail(field) {
 }
 
 function validateSameEmail(field) {
-	var email1 = document.getElementById('email_address')
-	var email2 = document.getElementById('email_confirm')
-	if(email1.value == email2.value){
-		return ""
+	// var email1 = document.getElementById('email_address')
+	// var email2 = document.getElementById('email_confirm')
+	if(field != document.getElementById('email_address').value){
+		return "The two emails MUST match.\n"
 	}
 	else{
-		field.setCustomValidity('The two e-mails must match.');
+		return "";
 	}
-
 }
 
 function validatePasswordRequirement(field){
@@ -73,18 +74,17 @@ function validatePasswordRequirement(field){
 		     ! /[0-9]/.test(field))
 		return "Passwords require one each of a-z, A-Z and 0-9.\n"
 	else
-		return ""
+		return "";
 }
 
 
 function validatePassword(field) {
-
-	if (field.value != document.getElementById('password_requirement').value) {
-		field.setCustomValidity('The two passwords must match.');
+	// console.log(field);
+	// console.log(document.getElementById('password_requirement').value);
+	if (field != document.getElementById('password_requirement').value) {
+		return "The two passwords MUST match.\n";
 	} 
-	else {
-		// input is valid -- reset the error message
-		// field.setCustomValidity('');
+	else{
 		return ""
 	}
 }
