@@ -1,8 +1,8 @@
 <?php
-    $filename = "SignUps2013.csv";
+    $filename = "userinfo.csv";
     $exists = (file_exists($filename));
 
- 	$handle = fopen($filename, 'a');
+ 	$handle = fopen($filename, 'a'); // 'a' means write only
 	$msg = "Thank you for registering your child.\n";//EMail message
 	$stringToAdd="";	//File into
 
@@ -25,10 +25,10 @@
 	fwrite($handle, $stringToAdd);
 	//now close the file
 	fclose($handle); 
-	$to = $_POST["usremail"];
-	$headers = "From: ". $_POST["parent_name"] ."<".$_POST["usremail"]. ">\r\n";
+	$to = $_POST["email_address"];
+	$headers = "From: ". $_POST["first_name"] ."<".$_POST["email_address"]. ">\r\n";
 	
-	mail($to, 'Registration', $msg,$headers);
+	mail($to, 'Welcome to Kuzines!', $msg,$headers);
 
 
 
