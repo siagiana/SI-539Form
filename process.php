@@ -3,7 +3,7 @@
     $exists = (file_exists($filename));
 
  	$handle = fopen($filename, 'a'); // 'a' means write only
-	$msg = "Thank you for registering your child.\n";//EMail message
+	$msg = "Thank you for signing up.\n";//EMail message
 	$stringToAdd="";	//File into
 
 	if (!$exists){
@@ -29,7 +29,6 @@
 	$headers = "From: ". $_POST["first_name"] ."<".$_POST["email_address"]. ">\r\n";
 	
 	mail($to, 'Welcome to Kuzines!', $msg,$headers);
-
 
 
 	echo "Email sent";
