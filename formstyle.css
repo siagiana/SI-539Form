@@ -1,6 +1,19 @@
 body {
   background-color: #f94d3d;
 }
+
+#content{
+  padding:40px;
+  padding-left: 2% !important;
+  color:#fff;
+  display: flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  font-family: Helvetica, Helvetica, Arial;
+  font-size: 1em;
+}
+
 h1 {
   text-align: center;
   font-weight: bolder;
@@ -15,17 +28,10 @@ h3  {
   font-size: 1.5em;
   font-weight: bold;
 }
-#content{
-  padding:40px;
-  border:1px;
-  color:#fff;
-  display:block;
-  font-family: Helvetica, Helvetica, Arial;
-  font-size: 1em;
-}
+
 form{
   border: 2px solid black;
-  padding-left: 2%;
+  padding-left: 2% !important;
 }
 .textbox  {
   height: 10px;
