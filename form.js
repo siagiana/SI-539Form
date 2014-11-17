@@ -1,10 +1,11 @@
-
+// console.log('jelloo');
 
 function showText()
 {
 		var popup_message = "Welcome to Kuzines, " + document.getElementById("first_name").value + "!";
 		alert(popup_message);
 }
+
 
 
 function validate(form) {
@@ -16,6 +17,7 @@ function validate(form) {
 	fail += validatePasswordRequirement(form.password_requirement.value)
 	fail += validatePassword(form.password.value)
 	fail += validateNickname(form.Nickname.value)
+	fail += validateSex(form.sex.value)
 	fail += validateZip(form.zipcode.value)
 	// alert(fail);
 	if (fail == "") {
@@ -100,6 +102,37 @@ function validateNickname(field) {
 		return ""
 }
 
+function validateSex (field){
+	console.log("check Sex")
+	console.log(field)
+
+	if (!field) {
+		return "Please choose your sex.\n";
+	}
+	else{
+		return ""
+	}
+
+	// var radios = document.getElementById('gender');
+	// var radioValid = false;
+	// // len = elem.length-1;
+	// // var chkvalue = '';
+	// var i = 0;
+	// while (!radioValid && i < radios.length)
+	// {
+	// 	if (radios[i].checked)
+	// 		radioValid = true;
+	// 		i++;
+	// }
+	// if (!radioValid)
+	// {
+	// 	return('Did not select gender.');
+	// }
+	// else{
+	// 	return ""
+	// }
+}
+
 function validateZip(field) {
 	if (field == "") 
 		return "No Zipcode was entered.\n"
@@ -110,4 +143,6 @@ function validateZip(field) {
 	else
 		return ""
 }
+
+
 
