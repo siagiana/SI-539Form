@@ -96,12 +96,14 @@
 			<label>Password</label>
 				<input type="password" id="password_requirement" name="password_requirement" required >
 				<!-- onchange="validatePasswordRequirement(this)"> -->
+				<span class="error"></span>
 			<br>
 			</div>
 			<div class="rebel">
 			<label>Confirm password</label>
-				<input type="password" id="password" name="password" required onchange="validatePassword(this)">
+				<input type="password" id="password" name="password" required >
 				<!-- onchange="validatePassword(this)"> -->
+				<span class="error"></span>	
 			<br>
 			</div>
 		</div>
