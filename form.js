@@ -18,7 +18,6 @@ function validate(form) {
 	fail += validatePassword(form.password.value)
 	fail += validateNickname(form.Nickname.value)
 	fail += validateSex(form.sex.value)
-	fail += validateCity(form.city.value)
 	fail += validateZip(form.zipcode.value)
 	// alert(fail);
 	if (fail == "") {
@@ -32,21 +31,21 @@ function validate(form) {
 }
 
 function validateFirstName(field) {
-	if (!field) 
+	if (field == "") 
 		return "No First Name was entered.\n"
 	else
 		return ""
 }
 
 function validateLastName(field) {
-	if (!field) 
+	if (field == "") 
 		return "No Last Name was entered.\n"
 	else
 		return ""
 }
 
 function validateEmail(field) {
-	if (!field) 
+	if (field == "") 
 		return "No Email was entered.\n"
 	else if (!((field.indexOf(".") > 0) &&
 		     (field.indexOf("@") > 0)) ||
@@ -68,7 +67,7 @@ function validateSameEmail(field) {
 }
 
 function validatePasswordRequirement(field){
-	if (!field) 
+	if (field == "") 
 		return "No Password was entered.\n"
 	else if (field.length < 8)
 		return "Passwords must be at least 8 characters.\n"
@@ -93,7 +92,7 @@ function validatePassword(field) {
 }
 
 function validateNickname(field) {
-	if (!field) 
+	if (field == "") 
 		return "No nickname was entered.\n"
 	else if (field.length < 5)
 		return "Nicknames must be at least 5 characters.\n"
@@ -134,15 +133,8 @@ function validateSex (field){
 	// }
 }
 
-function validateCity(field){
-	if (!field)
-		return "No city was entered.\n";
-	else
-		return ""
-}
-
 function validateZip(field) {
-	if (!field) 
+	if (field == "") 
 		return "No Zipcode was entered.\n"
 	else if (field.length != 5)
 		return "Zipcode must be 5 characters.\n"
