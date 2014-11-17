@@ -5,6 +5,8 @@ STEPS
 3. validate selected elt
 4. if fail, append message notice
 
+This js file is developed by Niro Haryamen Mohd Rais with the help of Hasbullah Razali
+
 */
 
 function validateOnChange (form){
@@ -12,10 +14,58 @@ function validateOnChange (form){
 }
 
 $(document).ready(function() {
-	checkPassword('#password_requirement')
-	samePassword('#password_requirement', '#password')
+	checkEmail('#email_address');
+	sameEmail('#email_address','#email_confirm');
+	checkPassword('#password_requirement');
+	samePassword('#password_requirement', '#password');
 
 });
+
+function checkEmail(EmailID){
+	$(EmailID).on('keyup', function(){
+		var emailSelector = $(this);
+		var errorSelector = emailSelector.siblings('.error');
+		// console.log(emailSelector);
+		if (emailSelector.val() == ""){
+			errorSelector.text("").text("No email was entered");
+		}
+		else if((emailSelector.val().indexOf(".") == -1) ||
+			(emailSelector.val().indexOf("@") == -1) ||
+			/[^a-zA-Z0-9.@_-]/.test(emailSelector.val())){
+			errorSelector.text("").text("The email address is invalid.");
+		}
+		else{
+			errorSelector.text("");
+		}
+	})
+}
+
+function sameEmail(EmailId, EmailID2){
+
+	$(EmailID2).on('change', function() {
+			// console.log("babi")
+		var emailSelector2 = $(this);
+		var emailSelector1 = $(EmailId);
+		var errorSelector1 = emailSelector1.siblings('.error');
+		var errorSelector2 = emailSelector2.siblings('.error');
+
+		console.log(emailSelector1.val());
+		console.log(emailSelector2.val());
+
+		if (errorSelector1.text()) {
+			errorSelector2.text("").text("Your email does not satisfy the requirements");
+		}
+		else if (emailSelector2.val() == "" || emailSelector1.val() != emailSelector2.val()) {
+			errorSelector2.text("").text("The two emails MUST match");
+		}
+		else{
+			errorSelector2.text("");
+		}
+	});
+
+}
+
+
 
 function checkPassword(passwordId) {
 	$(passwordId).on('keyup', function() {
@@ -47,14 +97,14 @@ function checkPassword(passwordId) {
 function samePassword(passwordId, passwordID2){
 
 	$(passwordID2).on('change', function() {
-			console.log("babi")
+			// console.log("babi")
 		var passwordSelector2 = $(this);
 		var passwordSelector1 = $(passwordId);
 		var errorSelector1 = passwordSelector1.siblings('.error');
 		var errorSelector2 = passwordSelector2.siblings('.error');
 
-		console.log(passwordSelector1.val());
-		console.log(passwordSelector2.val());
+		// console.log(passwordSelector1.val());
+		// console.log(passwordSelector2.val());
 
 		if (errorSelector1.text()) {
 			errorSelector2.text("").text("Your password does not satisfy the requirements");
