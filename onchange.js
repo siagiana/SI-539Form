@@ -22,7 +22,7 @@ $(document).ready(function() {
 });
 
 function checkEmail(EmailID){
-	$(EmailID).on('keyup', function(){
+	$(EmailID).on('change', function(){
 		var emailSelector = $(this);
 		var errorSelector = emailSelector.siblings('.error');
 		// console.log(emailSelector);
@@ -68,7 +68,7 @@ function sameEmail(EmailId, EmailID2){
 
 
 function checkPassword(passwordId) {
-	$(passwordId).on('keyup', function() {
+	$(passwordId).on('change', function() {
 		var passwordSelector = $(this);
 		// console.log(passwordSelector.val());
 		var errorSelector = passwordSelector.siblings('.error');
