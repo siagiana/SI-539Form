@@ -66,6 +66,9 @@ input,select{
 .rebel  {
   display: inline-block;
 }
+.error{
+  color:#47FF00;
+}
 .button {
     border: none;
     color: white;
