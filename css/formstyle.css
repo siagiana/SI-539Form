@@ -2,7 +2,6 @@
   font-family: helvetica, Arial, sans serif;
 }
 
-
 body {
   background-image: url("files/background.jpg");
   background-color: #cccccc;
@@ -12,6 +11,15 @@ body {
   font-family: tahoma;
   color: red;
 }
+
+.nav-tabs>li>a{
+  margin-right: 2px;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 4px 4px;
+  font-size: 1.5em;
+  color: #FFF;
+}
+
 h1 {
   font-family: georgia;
   text-align: center;
@@ -39,6 +47,45 @@ h3  {
   font-size: 1em;
   background-color: rgba(0,0,0,0.5);
 }
+
+.error{
+  color:#8b0000;
+}
+
+.aboutHeader .Kuzines{
+  width: 100% !important;
+  background-color: red;
+  color: #FFF;
+  font-size: 2.5em;
+  font-family: Helvetica, Arial;
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.article-body{
+  color: #FFF;
+  font-family: Helvetica, Arial;
+  font-size: 1.2em
+}
+
+.follow{
+  color:#FFF;
+  font-family: Helvetica, Arial;
+  font-size: 1.5em
+}
+
+.SocialMediaLogo{
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 64px 64px;
+  background-image: url("form/image/facebook29.png")
+  color: #615E5B;
+}
+
+.SocialMediaLogo > a{
+  color: #000000;
+}
+
 form {
   border: 2px dashed #7f5035;
   padding-left: 2%;
