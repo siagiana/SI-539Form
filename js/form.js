@@ -17,7 +17,7 @@ function validate(form) {
 	fail += validatePasswordRequirement(form.password_requirement.value)
 	fail += validatePassword(form.password.value)
 	fail += validateNickname(form.Nickname.value)
-	fail += validateSex(form.sex.value)
+	// fail += validateSex(form.sex.value)
 	fail += validateCity(form.city.value)
 	fail += validateZip(form.zipcode.value)
 	// alert(fail);
@@ -75,7 +75,7 @@ function validatePasswordRequirement(field){
 	else if (! /[a-z]/.test(field) ||
 			 ! /[A-Z]/.test(field) ||
 		     ! /[0-9]/.test(field))
-		return "Passwords require one each of a-z, A-Z and 0-9.\n"
+		return "Put each of a-z,A-Z,0-9.\n"
 	else
 		return "";
 }
@@ -103,36 +103,36 @@ function validateNickname(field) {
 		return ""
 }
 
-function validateSex (field){
-	console.log("check Sex")
-	console.log(field)
+// function validateSex (field){
+// 	console.log("check Sex")
+// 	console.log(field)
 
-	if (!field) {
-		return "Please choose your sex.\n";
-	}
-	else{
-		return ""
-	}
+// 	// if (!field) {
+// 	// 	return "Please choose your sex.\n";
+// 	// }
+// 	// else{
+// 	// 	return ""
+// 	// }
 
-	// var radios = document.getElementById('gender');
-	// var radioValid = false;
-	// // len = elem.length-1;
-	// // var chkvalue = '';
-	// var i = 0;
-	// while (!radioValid && i < radios.length)
-	// {
-	// 	if (radios[i].checked)
-	// 		radioValid = true;
-	// 		i++;
-	// }
-	// if (!radioValid)
-	// {
-	// 	return('Did not select gender.');
-	// }
-	// else{
-	// 	return ""
-	// }
-}
+// 	// var radios = document.getElementById('male');
+// 	// var radioValid = false;
+// 	// // len = elem.length-1;
+// 	// // var chkvalue = '';
+// 	// var i = 0;
+// 	// while (!radioValid && i < radios.length)
+// 	// {
+// 	// 	if (radios[i].checked)
+// 	// 		radioValid = true;
+// 	// 		i++;
+// 	// }
+// 	// if (!radioValid)
+// 	// {
+// 	// 	return('Did not select gender.');
+// 	// }
+// 	// else{
+// 	// 	return ""
+// 	// }
+// }
 
 function validateCity(field){
 	if (!field)

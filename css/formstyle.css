@@ -1,21 +1,31 @@
+* {
+  font-family: helvetica, Arial, sans serif;
+}
+
+
 body {
   background-image: url("files/background.jpg");
   background-color: #cccccc;
   background-position: center top;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: auto;
+  font-family: tahoma;
+  color: red;
 }
 h1 {
-  font-family: Helvetica;
+  font-family: georgia;
   text-align: center;
   font-weight: 800;
   /*font-style: italic;*/
   font-size: 6em;
 }
-h2  {
+h2 {
   font-size: 2em;
-  font-weight: bold;
+  /*letter-spacing: .2em; */
+  font-weight: thin;
+
 }
+
 h3  {
   font-size: 1.5em;
   font-weight: bold;
@@ -33,6 +43,12 @@ form {
   border: 2px dashed #7f5035;
   padding-left: 2%;
 }
+
+label {
+  font-family: helvetica, Arial;
+  font-weight: lighter;
+}
+
 .textbox  {
   height: 10px;
   width: 100%;
@@ -41,8 +57,21 @@ form {
   height: 10px;
   width: 16%;
 }
+
+.divider {
+  border: 0;
+  height: 1px;
+  
+  background: #fff;
+  background-image: -webkit-linear-gradient(left, #ccc, #fff, #ccc); 
+  background-image:    -moz-linear-gradient(left, #ccc, #fff, #ccc); 
+  background-image:     -ms-linear-gradient(left, #ccc, #fff, #ccc); 
+  background-image:      -o-linear-gradient(left, #ccc, #fff, #ccc); 
+}
+
 input,select{
     border: 2px solid #8c4236; 
+    border-radius: .5em;
     -webkit-box-shadow: 
       inset 0 0 8px  rgba(0,0,0,0.1),
             0 0 16px rgba(0,0,0,0.1); 
@@ -67,7 +96,7 @@ input,select{
   display: inline-block;
 }
 .error{
-  color:#47FF00;
+  color:#ff5d00;
 }
 .button {
     border: none;
@@ -75,8 +104,16 @@ input,select{
     font-weight: bolder;
     background-color: #ff7d00;
     margin-right: auto;
-    margin-left:auto;
+    margin-left:1em;
 }
+
+input[type="radio"] {
+  margin-right: 1em;
+}
+#female {
+  margin-left: 1em;
+}
+
 .gone
 {
     display : none;
@@ -97,7 +134,24 @@ footer {
   background-color: rgba(0,0,0,0.5);
 }
 
-@media only screen and (max-width:500px){
+
+
+
+
+
+
+@media only screen and (min-width:550px max-width:760px){
+ 
+  .col-sm-offset-1 {
+    margin-left: 1em;
+    /*not working...*/
+  }
+   select {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width:550px){
   #content{
     padding:20px;
   }
@@ -117,8 +171,14 @@ footer {
     background: rgba(255,255,255,0.8);
     margin: 0 0 4px 0;
   }
+  .rebel{
+    col-xs-10 col-xs-offset-2
+    width: 83.3%
+    margin-right: .0833%;
+    margin-left: .0833%;
+  }
   .button{
-    margin-right: 10px;
+    margin-right: auto;
     margin-left: auto;
   }
   form{

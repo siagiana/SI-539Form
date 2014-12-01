@@ -60,7 +60,7 @@ function checkEmail(EmailID){
 		else if((emailSelector.val().indexOf(".") == -1) ||
 			(emailSelector.val().indexOf("@") == -1) ||
 			/[^a-zA-Z0-9.@_-]/.test(emailSelector.val())){
-			errorSelector.text("").text("The email address is invalid.");
+			errorSelector.text("").text("Invalid email address.");
 		}
 		else{
 			errorSelector.text("");
@@ -107,11 +107,11 @@ function checkPassword(passwordId) {
 				 ! /[A-Z]/.test(passwordSelector.val() ) ||
 			     ! /[0-9]/.test(passwordSelector.val() )) {
 				// console.log('3')
-				errorSelector.text("").text("Passwords require one each of a-z, A-Z and 0-9");
+				errorSelector.text("").text("Put each of a-z,A-Z,0-9.");
 		}
 		else if (passwordSelector.val().length < 8) {
 			// console.log('2')
-			errorSelector.text("").text("Passwords must be at least 8 characters");
+			errorSelector.text("").text("More than 8 characters");
 		}
 		else {
 			// console.log('4')
